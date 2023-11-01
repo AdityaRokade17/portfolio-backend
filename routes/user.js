@@ -4,6 +4,6 @@ const router =  express.Router();
 
 const{sendMessage} = require("../controllers/sendMessages");
 
-router.get("/sendmessage", sendMessage);
+router.post("/sendmessage", sendMessage);
 
 module.exports = router;
