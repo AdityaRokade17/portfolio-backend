@@ -20,7 +20,7 @@ app.use(
 );
 
 //middle ware
-app.use(express.json());
+// app.use(express.json());
 
 const routes = require("./routes/user")
 app.use("/api/v1" , routes);
