@@ -6,7 +6,7 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const dbConnect = require("./config/database");
 
-const allowedOrigins = ['https://aditya-rokade.vercel.app'];
+const allowedOrigins = ['https://aditya-rokade.vercel.app' ,'https://portfolio-backend-livid-gamma.vercel.app'];
 app.use(
   cors({
     origin: function (origin, callback) {
