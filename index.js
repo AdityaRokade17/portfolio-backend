@@ -19,13 +19,13 @@ app.use(express.json());
 const routes = require("./routes/user")
 app.use("/api/v1" , routes);
 
-app.listen(PORT, () => {
-    console.log(`the server is running ar ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`the server is running ar ${PORT}`);
+// });
 
-app.use("/msg", (req, res) => {
+app.use("/", (req, res) => {
   
-  res.json({message :"msg here"})
+  res.json({message :"msg here"});
 })
 
 
