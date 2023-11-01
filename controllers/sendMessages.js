@@ -2,8 +2,9 @@ const User = require("../models/User");
 
 exports.sendMessage = async ( req, res) => {
     try{
-
+        
         console.log(req.body);
+        
         const { name , email , comment} = req.body;
         console.log(req.body);
         if (!name || !email || !comment) {
