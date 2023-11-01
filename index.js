@@ -24,16 +24,14 @@ app.use(
 // app.use(express.json());
 
 const routes = require("./routes/user")
-app.use("/api/v1" , routes);
+// app.use("/api/v1" , routes);
+app.use("/", routes)
 
 app.listen(PORT, () => {
     console.log(`the server is running ar ${PORT}`);
 });
 
-app.use("/", (req, res) => {
-  
-  res.json({});
-})
+
 
 
 dbConnect();
