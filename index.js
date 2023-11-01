@@ -6,16 +6,10 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const dbConnect = require("./config/database");
 
-const allowedOrigins = ['https://aditya-rokade.vercel.app' ,'https://portfolio-backend-livid-gamma.vercel.app'];
+const allowedOrigins = ['http://localhost:3000'];
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: 'https://aditya-rokade.vercel.app',
   })
 );
 
@@ -31,7 +25,7 @@ app.listen(PORT, () => {
 
 app.use("/", (req, res) => {
   
-  res.json({message :"msg here"});
+  res.json({});
 })
 
 
