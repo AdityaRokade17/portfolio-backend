@@ -23,4 +23,7 @@ app.listen(PORT, () => {
     console.log(`the server is running ar ${PORT}`);
 });
 
+app.use("/", (req, res) => {
+  res.json({messsge: "hello from express app"})
+})
 dbConnect();
