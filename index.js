@@ -6,10 +6,16 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const dbConnect = require("./config/database");
 
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['https://aditya-rokade.vercel.app/', 'http://localhost:3001']; // Replace with your frontend domain
 app.use(
   cors({
-    origin: 'https://aditya-rokade.vercel.app',
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 
